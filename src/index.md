@@ -1,11 +1,11 @@
----
+<!-- ---
 # https://vitepress.dev/reference/default-theme-home-page
-layout: home
+layout: page
 
 hero:
-  name: "MyBlog-VitePress"
-  text: "A VitePress Blog"
-  tagline: My great project tagline
+  name: "IKA'S BLOG"
+  text: "A Small Blog"
+  tagline:
   actions:
     - theme: brand
       text: Markdown Examples
@@ -21,5 +21,4 @@ features:
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
   - title: Feature C
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
----
-
+--- -->
