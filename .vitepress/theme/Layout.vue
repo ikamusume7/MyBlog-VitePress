@@ -10,7 +10,11 @@
   </div>
   <!-- 此处将渲染 markdown 内容 -->
   <div v-if="page.isNotFound">
-    <img src="./404 NotFound.webp" style="" class="container mx-auto" />
+    <img
+      src="./404 NotFound.webp"
+      style="max-width: 50%"
+      class="container mx-auto"
+    />
   </div>
   <Content v-else />
 </template>
