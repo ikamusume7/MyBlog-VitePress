@@ -53,13 +53,15 @@
 </template>
 
 <script setup>
-import Header from "./components/Header.vue";
-import Footer from "./components/Footer.vue";
-import Introduction from "./components/Introduction.vue";
-import Pagination from "./components/Pagination.vue";
+import Header from "./Header.vue";
+import Footer from "./Footer.vue";
+import Introduction from "./Introduction.vue";
+import Pagination from "./Pagination.vue";
 import { ref } from "vue";
+import { useData } from "vitepress";
 
 const posts = ref([1, 2, 3, 4, 5]);
+const { page } = useData();
 </script>
 
 <style>

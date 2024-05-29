@@ -3,7 +3,7 @@
     <div class="card bg-base-100 shadow-md w-[350px] h-[400px]">
       <div class="card-body w-full flex flex-col">
         <div class="avatar justify-center">
-          <div class="w-36 rounded-full"><img src="../avatar.webp" /></div>
+          <div class="w-36 rounded-full"><img src="./avatar.webp" /></div>
         </div>
         <div class="text-2xl font-bold text-center">伊卡</div>
         <div class="text-sm font-medium text-center">杂事动物</div>
