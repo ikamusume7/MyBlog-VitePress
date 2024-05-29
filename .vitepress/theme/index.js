@@ -3,7 +3,6 @@ import Layout from "./Layout.vue";
 import "./custom.css";
 
 export default {
-  extends: DefaultTheme,
   Layout,
   NotFound: () => "404", // <- this is a Vue 3 functional component
   enhanceApp({ app, router, siteData }) {
