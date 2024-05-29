@@ -1,6 +1,6 @@
 <template>
   <div class="background w-full h-full fixed top-0 left-0 -z-10" />
-  <div class="navbar bg-base-100/70 backdrop-blur drop-shadow-md z-50">
+  <div class="navbar sticky bg-base-100/70 backdrop-blur drop-shadow-md z-50">
     <div class="navbar-container flex flex-col md:flex-row mx-auto">
       <div class="navbar-brand">
         <a class="btn btn-ghost text-xl font-medium">IKA'S BLOG</a>
