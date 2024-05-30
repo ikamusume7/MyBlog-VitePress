@@ -1,7 +1,9 @@
+import theme from "@lando/vitepress-theme-default-plus";
 import Layout from "./Layout.vue";
 import "./custom.css";
 
 export default {
+  extends: theme,
   Layout,
   NotFound: () => "404", // <- this is a Vue 3 functional component
   enhanceApp({ app, router, siteData }) {

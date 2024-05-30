@@ -1,31 +1,13 @@
-import { defineConfig } from "vitepress";
+import { defineConfig } from "@lando/vitepress-theme-default-plus/config";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "IKA'S BLOG",
   description: "A Small Blog",
-  srcDir: "./src",
+  base: "/",
   cleanUrls: true,
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
-    nav: [
-      { text: "Home", link: "/" },
-      { text: "Examples", link: "/markdown-examples" },
-    ],
-
-    sidebar: [
-      {
-        text: "Examples",
-        items: [
-          { text: "Markdown Examples", link: "/markdown-examples" },
-          { text: "Runtime API Examples", link: "/api-examples" },
-        ],
-      },
-    ],
-
-    socialLinks: [
-      { icon: "github", link: "https://github.com/vuejs/vitepress" },
-    ],
   },
   markdown: {
     lineNumbers: true,

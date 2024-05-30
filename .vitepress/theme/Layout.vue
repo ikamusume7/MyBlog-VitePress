@@ -13,22 +13,40 @@
           </div>
         </section>
       </div>
+
       <div class="main-container-col flex flex-col">
-        <section class="flex flex-col">
+        <!-- 此处将渲染 markdown 内容 -->
+        <div v-if="page.isNotFound" class="w-[950px]">
+          <img
+            src="./404 NotFound.webp"
+            style="max-width: 50%"
+            class="container mx-auto"
+          />
+        </div>
+        <section v-else-if="frontmatter.index" class="flex flex-col">
           <div
             v-for="item in posts"
-            :key="item"
+            :key="item.title"
             class="card bg-base-100 shadow-md w-[950px] h-[200px] mx-5 mb-2"
           >
             <div class="card-body">
-              <h1 class="card-title">文章预览</h1>
+              <h1 class="card-title">{{ item.title }}</h1>
               <p class="text-base-content">文章内容</p>
-              <a href="/archives" class="text-info">查看更多</a>
+              <a :href="item.url" class="text-info">查看更多</a>
             </div>
           </div>
           <Pagination />
         </section>
+        <div
+          v-else
+          class="card bg-base-100 shadow-md w-[950px] h-[200px] mx-5 mb-2"
+        >
+          <article class="card-body">
+            <Content />
+          </article>
+        </div>
       </div>
+
       <div class="main-container-col flex flex-col">
         <section class="flex flex-col">
           <div class="card bg-base-100 shadow-md w-[350px] h-[600px]">
@@ -40,28 +58,22 @@
       </div>
     </div>
   </div>
-  <!-- 此处将渲染 markdown 内容 -->
-  <!-- <div v-if="page.isNotFound">
-    <img
-      src="./404 NotFound.webp"
-      style="max-width: 50%"
-      class="container mx-auto"
-    />
-  </div>
-  <Content v-else /> -->
   <Footer />
 </template>
 
 <script setup>
+import { Content } from "vitepress";
 import Header from "./Header.vue";
 import Footer from "./Footer.vue";
 import Introduction from "./Introduction.vue";
 import Pagination from "./Pagination.vue";
-import { ref } from "vue";
 import { useData } from "vitepress";
+import { useCollection } from "@lando/vitepress-theme-default-plus";
+// import { data as posts } from "./posts.data.ts";
 
-const posts = ref([1, 2, 3, 4, 5]);
-const { page } = useData();
+const posts = useCollection();
+const { page, frontmatter } = useData();
+console.log(posts);
 </script>
 
 <style>
