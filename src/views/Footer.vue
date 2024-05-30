@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer p-10 bg-base-100/70 backdrop-blur mt-5">
+  <footer class="footer p-12 bg-base-100/70 backdrop-blur mt-5">
     <aside>
       <p>
         IKA'S BLOG<br />Powered by

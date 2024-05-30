@@ -8,6 +8,7 @@ export default defineConfig({
   cleanUrls: true,
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
+    // https://vitepress-theme-default-plus.lando.dev/config/config.html
   },
   markdown: {
     lineNumbers: true,

@@ -1,6 +1,6 @@
 import theme from "@lando/vitepress-theme-default-plus";
-import Layout from "./Layout.vue";
-import "./custom.css";
+import Layout from "./views/Layout.vue";
+import "./styles/custom.css";
 
 export default {
   extends: theme,

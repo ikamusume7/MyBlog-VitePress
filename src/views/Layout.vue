@@ -6,9 +6,31 @@
       <div class="main-container-col flex flex-col">
         <Introduction />
         <section class="mt-5">
-          <div class="card bg-base-100 shadow-md w-[350px] h-[600px]">
+          <div class="card bg-base-100 shadow-md w-[350px] h-auto">
             <div class="card-body">
               <h1 class="card-title">归档</h1>
+              <ul class="menu w-full rounded-box">
+                <li><a>Item 1</a></li>
+                <li>
+                  <details open>
+                    <summary>Parent</summary>
+                    <ul>
+                      <li><a>Submenu 1</a></li>
+                      <li><a>Submenu 2</a></li>
+                      <li>
+                        <details open>
+                          <summary>Parent</summary>
+                          <ul>
+                            <li><a>Submenu 1</a></li>
+                            <li><a>Submenu 2</a></li>
+                          </ul>
+                        </details>
+                      </li>
+                    </ul>
+                  </details>
+                </li>
+                <li><a>Item 3</a></li>
+              </ul>
             </div>
           </div>
         </section>
@@ -16,9 +38,9 @@
 
       <div class="main-container-col flex flex-col">
         <!-- 此处将渲染 markdown 内容 -->
-        <div v-if="page.isNotFound" class="w-[950px]">
+        <div v-if="page.isNotFound" class="w-[950px] mx-5">
           <img
-            src="./404 NotFound.webp"
+            src="/404 NotFound.webp"
             style="max-width: 50%"
             class="container mx-auto"
           />
@@ -39,9 +61,9 @@
         </section>
         <div
           v-else
-          class="card bg-base-100 shadow-md w-[950px] h-[200px] mx-5 mb-2"
+          class="card bg-base-100 shadow-md w-[950px] h-auto mx-5 mb-2"
         >
-          <article class="card-body">
+          <article class="card-body vp-doc">
             <Content />
           </article>
         </div>
@@ -49,9 +71,31 @@
 
       <div class="main-container-col flex flex-col">
         <section class="flex flex-col">
-          <div class="card bg-base-100 shadow-md w-[350px] h-[600px]">
+          <div class="card bg-base-100 shadow-md w-[350px] h-auto">
             <div class="card-body">
               <h1 class="card-title">文章分类</h1>
+              <ul class="menu w-full rounded-box">
+                <li><a>Item 1</a></li>
+                <li>
+                  <details open>
+                    <summary>Parent</summary>
+                    <ul>
+                      <li><a>Submenu 1</a></li>
+                      <li><a>Submenu 2</a></li>
+                      <li>
+                        <details open>
+                          <summary>Parent</summary>
+                          <ul>
+                            <li><a>Submenu 1</a></li>
+                            <li><a>Submenu 2</a></li>
+                          </ul>
+                        </details>
+                      </li>
+                    </ul>
+                  </details>
+                </li>
+                <li><a>Item 3</a></li>
+              </ul>
             </div>
           </div>
         </section>
@@ -68,10 +112,8 @@ import Footer from "./Footer.vue";
 import Introduction from "./Introduction.vue";
 import Pagination from "./Pagination.vue";
 import { useData } from "vitepress";
-import { useCollection } from "@lando/vitepress-theme-default-plus";
-// import { data as posts } from "./posts.data.ts";
+import { data as posts } from "../posts.data.ts";
 
-const posts = useCollection();
 const { page, frontmatter } = useData();
 console.log(posts);
 </script>
@@ -85,6 +127,6 @@ body {
 }
 .background {
   opacity: 0.3;
-  background: url("./bg.webp") repeat;
+  background: url("/bg.webp") repeat;
 }
 </style>
