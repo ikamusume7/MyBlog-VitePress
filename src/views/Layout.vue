@@ -45,20 +45,9 @@
             class="container mx-auto"
           />
         </div>
-        <section v-else-if="frontmatter.index" class="flex flex-col">
-          <div
-            v-for="item in posts"
-            :key="item.title"
-            class="card bg-base-100 shadow-md w-[950px] h-[200px] mx-5 mb-2"
-          >
-            <div class="card-body">
-              <h1 class="card-title">{{ item.title }}</h1>
-              <p class="text-base-content">文章内容</p>
-              <a :href="item.url" class="text-info">查看更多</a>
-            </div>
-          </div>
-          <Pagination />
-        </section>
+        <div v-else-if="frontmatter.home">
+          <Content />
+        </div>
         <div
           v-else
           class="card bg-base-100 shadow-md w-[950px] h-auto mx-5 mb-2"
@@ -67,6 +56,8 @@
             <Content />
           </article>
         </div>
+
+        <!-- <Pagination /> -->
       </div>
 
       <div class="main-container-col flex flex-col">
@@ -112,10 +103,8 @@ import Footer from "./Footer.vue";
 import Introduction from "./Introduction.vue";
 import Pagination from "./Pagination.vue";
 import { useData } from "vitepress";
-import { data as posts } from "../posts.data.ts";
 
 const { page, frontmatter } = useData();
-console.log(posts);
 </script>
 
 <style>
