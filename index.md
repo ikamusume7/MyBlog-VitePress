@@ -5,7 +5,6 @@ home: true
 
 <script setup>
 import { data as posts } from "./src/posts.data.ts";
-console.log(posts);
 </script>
 
 <div

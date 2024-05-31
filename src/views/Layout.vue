@@ -9,27 +9,22 @@
           <div class="card bg-base-100 shadow-md w-[350px] h-auto">
             <div class="card-body">
               <h1 class="card-title">归档</h1>
-              <ul class="menu w-full rounded-box">
-                <li><a>Item 1</a></li>
+              <ul
+                v-for="(pValue, pKey) in postsByDate"
+                :key="pKey"
+                class="menu w-full rounded-box"
+              >
                 <li>
-                  <details open>
-                    <summary>Parent</summary>
-                    <ul>
-                      <li><a>Submenu 1</a></li>
-                      <li><a>Submenu 2</a></li>
-                      <li>
-                        <details open>
-                          <summary>Parent</summary>
-                          <ul>
-                            <li><a>Submenu 1</a></li>
-                            <li><a>Submenu 2</a></li>
-                          </ul>
-                        </details>
+                  <!-- <details> -->
+                  <!-- <summary>{{ pKey }}</summary> -->
+                  <!-- <ul>
+                      <li v-for="(cValue, cKey) in pValue" :key="cKey">
+                        <a>{{ cValue }}</a>
                       </li>
-                    </ul>
-                  </details>
+                    </ul> -->
+                  <!-- </details> -->
+                  <a>{{ pKey }}</a>
                 </li>
-                <li><a>Item 3</a></li>
               </ul>
             </div>
           </div>
@@ -65,27 +60,21 @@
           <div class="card bg-base-100 shadow-md w-[350px] h-auto">
             <div class="card-body">
               <h1 class="card-title">文章分类</h1>
-              <ul class="menu w-full rounded-box">
-                <li><a>Item 1</a></li>
+              <ul
+                v-for="(pValue, pKey) in postsByCategory"
+                :key="pKey"
+                class="menu w-full rounded-box"
+              >
                 <li>
-                  <details open>
-                    <summary>Parent</summary>
-                    <ul>
-                      <li><a>Submenu 1</a></li>
-                      <li><a>Submenu 2</a></li>
+                  <details>
+                    <summary>{{ pKey }}</summary>
+                    <ul v-for="(cValue, cKey) in pValue" :key="cKey">
                       <li>
-                        <details open>
-                          <summary>Parent</summary>
-                          <ul>
-                            <li><a>Submenu 1</a></li>
-                            <li><a>Submenu 2</a></li>
-                          </ul>
-                        </details>
+                        <a>{{ cValue.title }}</a>
                       </li>
                     </ul>
                   </details>
                 </li>
-                <li><a>Item 3</a></li>
               </ul>
             </div>
           </div>
@@ -103,6 +92,30 @@ import Footer from "./Footer.vue";
 import Introduction from "./Introduction.vue";
 import Pagination from "./Pagination.vue";
 import { useData } from "vitepress";
+import { data as posts } from "../posts.data.ts";
+
+// 按照category分类posts
+const postsByCategory = posts.reduce((acc, post) => {
+  const category = post.category;
+  if (!acc[category]) {
+    acc[category] = [];
+  }
+  acc[category].push(post);
+  return acc;
+}, {});
+// console.log(posts);
+console.log(postsByCategory);
+// 按照createDate里的年加月（去掉日）分类统计posts 例 2024-5-31 => 2024-5
+const postsByDate = posts.reduce((acc, post) => {
+  const date = post.createDate;
+  const yearMonth = date.slice(0, date.lastIndexOf("-"));
+  if (!acc[yearMonth]) {
+    acc[yearMonth] = [];
+  }
+  acc[yearMonth].push(post);
+  return acc;
+}, {});
+console.log(postsByDate);
 
 const { page, frontmatter } = useData();
 </script>
