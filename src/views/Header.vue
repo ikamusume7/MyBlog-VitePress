@@ -4,7 +4,9 @@
   >
     <div class="navbar-container flex flex-col md:flex-row mx-auto">
       <div class="navbar-brand">
-        <a class="text-xl font-medium" href="/">IKA'S BLOG</a>
+        <a class="" href="/"
+          ><img src="/eva-logo.png" alt="logo" class="h-8 opacity-60"
+        /></a>
       </div>
       <div
         class="navbar-menu flex flex-col md:flex-row md:w-[432px] lg:w-[688px] xl:w-[994px] 2xl:w-[1200px]"
