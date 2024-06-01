@@ -22,4 +22,12 @@ export default defineConfig({
   markdown: {
     lineNumbers: true,
   },
+  rewrites: {
+    "pages/home.md": "index.md",
+    "pages/archives.md": "archives.md",
+    "pages/categories.md": "categories.md",
+    "pages/tags.md": "tags.md",
+    "pages/links.md": "links.md",
+    "pages/about.md": "about.md",
+  },
 });

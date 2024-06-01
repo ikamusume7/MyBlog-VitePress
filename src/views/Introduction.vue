@@ -12,18 +12,26 @@
         <div class="flex flex-row mt-5">
           <div class="flex flex-col w-1/3 items-center">
             <div class="text-sm font-medium">文章</div>
-            <div class="text-3xl font-normal">0</div>
+            <div class="text-3xl font-normal">{{ postCount }}</div>
           </div>
           <div class="flex flex-col w-1/3 items-center">
             <div class="text-sm font-mediumr">分类</div>
-            <div class="text-3xl font-normal">0</div>
+            <div class="text-3xl font-normal">{{ categoryCount }}</div>
           </div>
           <div class="flex flex-col w-1/3 items-center">
             <div class="text-sm font-medium">标签</div>
-            <div class="text-3xl font-normal">0</div>
+            <div class="text-3xl font-normal">{{ tagCount }}</div>
           </div>
         </div>
       </div>
     </div>
   </section>
 </template>
+
+<script setup>
+const { postCount, categoryCount, tagCount } = defineProps([
+  "postCount",
+  "categoryCount",
+  "tagCount",
+]);
+</script>
