@@ -2,8 +2,8 @@
   <div class="flex flex-col h-screen">
     <div class="background w-full h-full fixed top-0 left-0 -z-10" />
     <Header @change-theme="changeTheme" :isDark="isDark" />
-    <main class="main w-full grow">
-      <div class="main-container flex flex-row mx-auto mt-8 justify-center">
+    <main class="main w-full grow mt-[110px]">
+      <div class="main-container flex flex-row mx-auto justify-center">
         <div class="main-container-col flex flex-col">
           <Introduction
             :postCount="posts.length"
@@ -12,8 +12,8 @@
           />
         </div>
 
-        <div class="main-container-col">
-          <div v-if="page.isNotFound" class="w-[950px] mx-5">
+        <div class="main-container-col w-[850px] mx-5">
+          <div v-if="page.isNotFound">
             <img
               src="/404 NotFound.webp"
               style="max-width: 50%"
@@ -24,10 +24,7 @@
             <!-- 此处将渲染 markdown 内容 -->
             <Content />
           </div>
-          <div
-            v-else
-            class="card bg-base-100 shadow-md w-[950px] h-auto mx-5 mb-2"
-          >
+          <div v-else class="card bg-base-100 shadow-md h-auto mb-2">
             <article class="card-body vp-doc">
               <h1 class="text-3xl font-bold">{{ frontmatter.title }}</h1>
               <Content />

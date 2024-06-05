@@ -13,9 +13,9 @@ console.log(dates)
 <div
 v-for="(posts, date) in dates"
 :key="date"
-class="card bg-base-100 shadow-md w-[950px] h-auto mx-5 mb-2"
+class="card bg-base-100 shadow-md w-auto h-auto mb-2"
 >
-    <div class="card-body w-[950px]">
+    <div class="card-body w-auto">
         <div>
           <div class="border-2 rounded-md w-max p-2">{{date}}</div>
         </div>
@@ -25,7 +25,7 @@ class="card bg-base-100 shadow-md w-[950px] h-auto mx-5 mb-2"
               <div class="w-3 h-3 rounded-full bg-base-300 dark:bg-white ml-[-31px]"></div>
               <div class="flex flex-col ml-3 mt-[-5px]">
                 <span>{{ post.createDate }}</span>
-                <a :href="post.url">{{ post.title }}</a>
+                <a :href="post.url" class="hover:underline">{{ post.title }}</a>
                 <span>{{post.category.join("/")}}</span>
               </div>
             </div>

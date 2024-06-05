@@ -1,6 +1,6 @@
 <template>
   <header
-    class="navbar sticky top-0 bg-base-100/70 backdrop-blur drop-shadow-md z-50"
+    class="navbar fixed top-0 bg-base-100/70 backdrop-blur drop-shadow-md z-50"
   >
     <div class="navbar-container flex flex-col md:flex-row mx-auto">
       <div class="navbar-brand">

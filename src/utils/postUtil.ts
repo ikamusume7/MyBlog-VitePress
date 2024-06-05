@@ -2,7 +2,7 @@ export const sortPostsByCategory = (posts) => {
   const categories = {};
   let categoryCount = 0;
   posts.forEach((post) => {
-    const category = post.category;
+    const category = post.frontmatter.category;
     if (!categories[category]) {
       categories[category] = [];
       categoryCount++;
@@ -16,7 +16,7 @@ export const sortPostsByCategory = (posts) => {
 export const sortPostsByDate = (posts) => {
   const dates = {};
   posts.forEach((post) => {
-    const date = post.createDate.split("-");
+    const date = post.frontmatter.createDate.split("-");
     const yearMonth = date[0] + "年" + date[1] + "月";
     if (!dates[yearMonth]) {
       dates[yearMonth] = [];
@@ -39,7 +39,7 @@ export const sortPostsByDate = (posts) => {
 export const sortPostsByYear = (posts) => {
   const years = {};
   posts.forEach((post) => {
-    const year = post.createDate.split("-")[0];
+    const year = post.frontmatter.createDate.split("-")[0];
     if (!years[year]) {
       years[year] = [];
     }
@@ -62,7 +62,7 @@ export const sortPostsByTag = (posts) => {
   const tags = {};
   let tagCount = 0;
   posts.forEach((post) => {
-    const postTags = post.tags;
+    const postTags = post.frontmatter.tags;
     postTags.forEach((tag) => {
       if (!tags[tag]) {
         tags[tag] = { count: 0 };

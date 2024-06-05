@@ -1,5 +1,8 @@
-import { defineConfig } from "@lando/vitepress-theme-default-plus/config";
+import { defineConfig } from "vitepress";
 import { withPwa } from "@vite-pwa/vitepress";
+import { fileURLToPath, URL } from "node:url";
+import { viteDemoPreviewPlugin } from "@vitepress-code-preview/plugin";
+import { demoPreviewPlugin } from "@vitepress-code-preview/plugin";
 
 // https://vitepress.dev/reference/site-config
 export default withPwa(
@@ -8,7 +11,25 @@ export default withPwa(
     description: "A Small Blog",
     base: "/",
     cleanUrls: true,
-    head: [["link", { rel: "icon", href: "/favicon.ico" }]],
+    head: [
+      ["link", { rel: "icon", href: "/favicon.ico" }],
+      ["link", { rel: "preconnect", href: "https://fonts.googleapis.com" }],
+      [
+        "link",
+        {
+          rel: "preconnect",
+          href: "https://fonts.gstatic.com",
+          crossorigin: "",
+        },
+      ],
+      [
+        "link",
+        {
+          href: "https://fonts.googleapis.com/css2?family=Roboto&display=swap",
+          rel: "stylesheet",
+        },
+      ],
+    ],
     themeConfig: {
       // https://vitepress.dev/reference/default-theme-config
       // https://vitepress-theme-default-plus.lando.dev/config/config.html
@@ -23,6 +44,13 @@ export default withPwa(
     },
     markdown: {
       lineNumbers: true,
+      config: (md) => {
+        const docRoot = fileURLToPath(new URL("../", import.meta.url));
+        md.use(demoPreviewPlugin, { docRoot });
+      },
+    },
+    vite: {
+      plugins: [viteDemoPreviewPlugin()],
     },
     rewrites: {
       "pages/home.md": "index.md",
