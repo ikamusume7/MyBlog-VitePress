@@ -4,8 +4,8 @@ home: true
 ---
 
 <script setup>
-import { data as posts } from "../src/posts.data.ts";
-import { sortPostsByCategory } from "../src/utils/postUtil.ts";
+import { data as posts } from "../src/posts.data";
+import { sortPostsByCategory } from "../src/utils/postUtil";
 const { categories, categoryCount } = sortPostsByCategory(posts);
 </script>
 
