@@ -33,14 +33,6 @@ export default withPwa(
     themeConfig: {
       // https://vitepress.dev/reference/default-theme-config
       // https://vitepress-theme-default-plus.lando.dev/config/config.html
-      collections: {
-        post: {
-          frontmatter: {
-            collection: "post",
-          },
-          patterns: ["posts/**/*.md"],
-        },
-      },
     },
     markdown: {
       lineNumbers: true,

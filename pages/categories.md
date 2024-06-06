@@ -22,7 +22,7 @@ const { categories, categoryCount } = sortPostsByCategory(posts);
             <summary>{{ pKey }}</summary>
             <ul v-for="(cValue, cKey) in pValue" :key="cKey">
                 <li>
-                <a>{{ cValue.title }}</a>
+                <a>{{ cValue.frontmatter.title }}</a>
                 </li>
             </ul>
             </details>

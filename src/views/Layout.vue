@@ -21,7 +21,9 @@
             />
           </div>
           <div v-else-if="frontmatter.home">
-            <!-- 此处将渲染 markdown 内容 -->
+            <Content />
+          </div>
+          <div v-else-if="frontmatter.title === undefined">
             <Content />
           </div>
           <div v-else class="card bg-base-100 shadow-md h-auto mb-2">

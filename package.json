@@ -6,10 +6,13 @@
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.13",
+    "@types/cross-spawn": "^6.0.6",
+    "@types/node": "^20.14.2",
     "@vite-pwa/vitepress": "^0.5.0",
     "@vitepress-code-preview/container": "^1.0.7",
     "@vitepress-code-preview/plugin": "^1.0.4",
     "autoprefixer": "^10.4.19",
+    "cross-spawn": "^7.0.3",
     "daisyui": "^4.11.1",
     "gray-matter": "^4.0.3",
     "tailwindcss": "^3.4.3",

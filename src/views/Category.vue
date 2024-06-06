@@ -18,7 +18,7 @@
                 </summary>
                 <ul v-for="(cValue, cKey) in pValue" :key="cKey">
                   <li>
-                    <a :href="cValue.url">{{ cValue.title }}</a>
+                    <a :href="cValue.url">{{ cValue.frontmatter.title }}</a>
                   </li>
                 </ul>
               </details>

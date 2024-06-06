@@ -20,7 +20,7 @@ export default {
         });
       });
     for (let tag of tags) {
-      paths.push({ params: { tags: tag } });
+      paths.push({ params: { tag } });
     }
     return paths;
   },

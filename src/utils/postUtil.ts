@@ -1,7 +1,13 @@
-export const sortPostsByCategory = (posts) => {
-  const categories = {};
+import { type ContentData } from "vitepress";
+
+interface Categories {
+  [key: string]: ContentData[];
+}
+
+export const sortPostsByCategory = (posts: ContentData[]) => {
+  const categories: Categories = {};
   let categoryCount = 0;
-  posts.forEach((post) => {
+  posts.forEach((post: ContentData) => {
     const category = post.frontmatter.category;
     if (!categories[category]) {
       categories[category] = [];
@@ -13,9 +19,13 @@ export const sortPostsByCategory = (posts) => {
   return { categories, categoryCount };
 };
 
-export const sortPostsByDate = (posts) => {
-  const dates = {};
-  posts.forEach((post) => {
+interface Dates {
+  [key: string]: ContentData[];
+}
+
+export const sortPostsByDate = (posts: ContentData[]) => {
+  const dates: Dates = {};
+  posts.forEach((post: ContentData) => {
     const date = post.frontmatter.createDate.split("-");
     const yearMonth = date[0] + "年" + date[1] + "月";
     if (!dates[yearMonth]) {
@@ -36,9 +46,13 @@ export const sortPostsByDate = (posts) => {
   return dates;
 };
 
-export const sortPostsByYear = (posts) => {
-  const years = {};
-  posts.forEach((post) => {
+interface Years {
+  [key: string]: ContentData[];
+}
+
+export const sortPostsByYear = (posts: ContentData[]) => {
+  const years: Years = {};
+  posts.forEach((post: ContentData) => {
     const year = post.frontmatter.createDate.split("-")[0];
     if (!years[year]) {
       years[year] = [];
@@ -50,7 +64,8 @@ export const sortPostsByYear = (posts) => {
   for (const year in years) {
     years[year].sort((a, b) => {
       return (
-        new Date(b.createDate).getTime() - new Date(a.createDate).getTime()
+        +new Date(b.frontmatter.createDate) -
+        +new Date(a.frontmatter.createDate)
       );
     });
   }
@@ -58,12 +73,16 @@ export const sortPostsByYear = (posts) => {
   return years;
 };
 
-export const sortPostsByTag = (posts) => {
-  const tags = {};
+interface Tags {
+  [key: string]: { count: number };
+}
+
+export const sortPostsByTag = (posts: ContentData[]) => {
+  const tags: Tags = {};
   let tagCount = 0;
-  posts.forEach((post) => {
+  posts.forEach((post: ContentData) => {
     const postTags = post.frontmatter.tags;
-    postTags.forEach((tag) => {
+    postTags.forEach((tag: any) => {
       if (!tags[tag]) {
         tags[tag] = { count: 0 };
         tagCount++;

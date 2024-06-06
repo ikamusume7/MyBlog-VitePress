@@ -7,7 +7,6 @@ home: true
 import { data as posts } from "../src/posts.data.ts";
 import { sortPostsByYear } from "../src/utils/postUtil.ts";
 const dates = sortPostsByYear(posts);
-console.log(dates)
 </script>
 
 <div
@@ -24,9 +23,9 @@ class="card bg-base-100 shadow-md w-auto h-auto mb-2"
             <div class="flex flex-row mt-5">
               <div class="w-3 h-3 rounded-full bg-base-300 dark:bg-white ml-[-31px]"></div>
               <div class="flex flex-col ml-3 mt-[-5px]">
-                <span>{{ post.createDate }}</span>
-                <a :href="post.url" class="hover:underline">{{ post.title }}</a>
-                <span>{{post.category.join("/")}}</span>
+                <span>{{ post.frontmatter.createDate }}</span>
+                <a :href="post.url" class="hover:underline">{{ post.frontmatter.title }}</a>
+                <span>{{post.frontmatter.category.join("/")}}</span>
               </div>
             </div>
           </div>

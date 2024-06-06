@@ -1,5 +1,4 @@
 ---
-collection: post
 title: Vue学习笔记
 author:
   name: 伊卡
