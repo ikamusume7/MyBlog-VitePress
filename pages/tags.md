@@ -5,8 +5,8 @@ home: true
 
 <script setup>
 import { useRouter } from "vitepress";
-import { data as posts } from "../src/posts.data.ts";
-import { sortPostsByTag } from "../src/utils/postUtil.ts";
+import { data as posts } from "../src/posts.data";
+import { sortPostsByTag } from "../src/utils/postUtil";
 const { tags } = sortPostsByTag(posts);
 const router = useRouter();
 const tagHandler = (tag) => {

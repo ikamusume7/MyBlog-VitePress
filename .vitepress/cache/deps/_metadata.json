@@ -1,37 +1,67 @@
 {
-  "hash": "dbfecc53",
-  "configHash": "7852287c",
-  "lockfileHash": "b1776aaf",
-  "browserHash": "053133de",
+  "hash": "3fea1002",
+  "configHash": "b4b1e451",
+  "lockfileHash": "ff7da9c4",
+  "browserHash": "abd460d3",
   "optimized": {
     "vue": {
       "src": "../../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
       "file": "vue.js",
-      "fileHash": "edd84653",
+      "fileHash": "8610bfcd",
       "needsInterop": false
     },
     "vitepress > @vue/devtools-api": {
       "src": "../../../node_modules/@vue/devtools-api/dist/index.js",
       "file": "vitepress___@vue_devtools-api.js",
-      "fileHash": "b3f90eb9",
+      "fileHash": "54e2d353",
       "needsInterop": false
     },
     "vitepress > @vueuse/core": {
       "src": "../../../node_modules/@vueuse/core/index.mjs",
       "file": "vitepress___@vueuse_core.js",
-      "fileHash": "73a07477",
+      "fileHash": "cc373ce6",
       "needsInterop": false
     },
-    "@vitepress-code-preview/container": {
-      "src": "../../../node_modules/@vitepress-code-preview/container/dist/index.js",
-      "file": "@vitepress-code-preview_container.js",
-      "fileHash": "c2a7da00",
+    "vitepress-plugin-sandpack": {
+      "src": "../../../node_modules/vitepress-plugin-sandpack/dist/esm/index.mjs",
+      "file": "vitepress-plugin-sandpack.js",
+      "fileHash": "70d6603f",
+      "needsInterop": false
+    },
+    "@giscus/vue": {
+      "src": "../../../node_modules/@giscus/vue/dist/index.js",
+      "file": "@giscus_vue.js",
+      "fileHash": "2b165630",
       "needsInterop": false
     }
   },
   "chunks": {
-    "chunk-JWA4H7QR": {
-      "file": "chunk-JWA4H7QR.js"
+    "giscus-BNK3dBIH-SHSTGGYD": {
+      "file": "giscus-BNK3dBIH-SHSTGGYD.js"
+    },
+    "chunk-MIUPHDQH": {
+      "file": "chunk-MIUPHDQH.js"
+    },
+    "node-OULJKRQT": {
+      "file": "node-OULJKRQT.js"
+    },
+    "index-585bceb7-GG66TKOH": {
+      "file": "index-585bceb7-GG66TKOH.js"
+    },
+    "chunk-ODE6PBVG": {
+      "file": "chunk-ODE6PBVG.js"
+    },
+    "runtime-OGYOSMOP": {
+      "file": "runtime-OGYOSMOP.js"
+    },
+    "chunk-L4J3WPM6": {
+      "file": "chunk-L4J3WPM6.js"
+    },
+    "chunk-EHJFFVHQ": {
+      "file": "chunk-EHJFFVHQ.js"
+    },
+    "chunk-OSJZHPF7": {
+      "file": "chunk-OSJZHPF7.js"
     }
   }
 }

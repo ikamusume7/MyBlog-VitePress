@@ -4,7 +4,7 @@ home: true
 ---
 
 <script setup>
-import { data as posts } from "../src/posts.data.ts";
+import { data as posts } from "../src/posts.data";
 </script>
 
 <div

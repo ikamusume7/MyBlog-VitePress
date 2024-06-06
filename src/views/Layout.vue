@@ -30,6 +30,26 @@
             <article class="card-body vp-doc">
               <h1 class="text-3xl font-bold">{{ frontmatter.title }}</h1>
               <Content />
+              <div :key="title" class="giscus">
+                <component
+                  :is="'script'"
+                  src="https://giscus.app/client.js"
+                  data-repo="ikamusume7/MyBlog-VitePress"
+                  data-repo-id="R_kgDOMBkF2A"
+                  data-category="Announcements"
+                  data-category-id="DIC_kwDOMBkF2M4Cf6LZ"
+                  data-mapping="pathname"
+                  data-strict="0"
+                  data-reactions-enabled="1"
+                  data-emit-metadata="0"
+                  data-input-position="top"
+                  data-theme="transparent_dark"
+                  data-lang="zh-CN"
+                  data-loading="lazy"
+                  crossorigin="anonymous"
+                  async
+                />
+              </div>
             </article>
           </div>
 
@@ -54,15 +74,15 @@ import Introduction from "./Introduction.vue";
 import Category from "./Category.vue";
 import Pagination from "./Pagination.vue";
 import { useData, useRouter } from "vitepress";
-import { data as posts } from "../posts.data";
-import { onMounted, watch } from "vue";
+import { data as posts } from "../posts.data.mjs";
+import { onMounted, ref, watch } from "vue";
 import {
   sortPostsByCategory,
   sortPostsByDate,
   sortPostsByTag,
 } from "../utils/postUtil";
 
-const { page, frontmatter, isDark } = useData();
+const { page, frontmatter, isDark, title } = useData();
 
 const router = useRouter();
 

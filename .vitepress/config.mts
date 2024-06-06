@@ -1,8 +1,8 @@
 import { defineConfig } from "vitepress";
 import { withPwa } from "@vite-pwa/vitepress";
-import { fileURLToPath, URL } from "node:url";
-import { viteDemoPreviewPlugin } from "@vitepress-code-preview/plugin";
-import { demoPreviewPlugin } from "@vitepress-code-preview/plugin";
+import container from "markdown-it-container";
+import { renderSandbox } from "vitepress-plugin-sandpack";
+import timeline from "vitepress-markdown-timeline";
 
 // https://vitepress.dev/reference/site-config
 export default withPwa(
@@ -36,14 +36,18 @@ export default withPwa(
     },
     markdown: {
       lineNumbers: true,
-      config: (md) => {
-        const docRoot = fileURLToPath(new URL("../", import.meta.url));
-        md.use(demoPreviewPlugin, { docRoot });
+      config(md) {
+        md
+          // the second parameter is html tag name
+          .use(container, "sandbox", {
+            render(tokens, idx) {
+              return renderSandbox(tokens, idx, "sandbox");
+            },
+          });
+        md.use(timeline);
       },
     },
-    vite: {
-      plugins: [viteDemoPreviewPlugin()],
-    },
+    vite: {},
     rewrites: {
       "pages/home.md": "index.md",
       "pages/archives.md": "archives.md",

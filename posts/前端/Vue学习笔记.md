@@ -8,9 +8,29 @@ tags:
   - Vue
 ---
 
+## 语法
+
+### 语法速览
+
+- 双大括号
+- v-html
+- v-bind 或 :
+- v-for
+- v-if v-else-if v-else
+- v-show
+- v-on 或 @
+- v-model
+- ref()
+- reactive()
+- computed()
+- watch()
+- onMounted()
+
+---
+
 ## Single-File Components
 
-简写`SFC`，中文`单文件组件`，将 js、html、css 封装在了同一个文件里。
+简写`SFC`，中文`单文件组件`，将 js、html、css 封装在了一个后缀名为`.vue`的文件里。
 
 一般的格式：
 
@@ -21,26 +41,3 @@ tags:
 
 <style scoped></style>
 ```
-
----
-
-## 数据绑定
-
-### 双大括号
-
-将计算式或变量插入到 html 中
-
-例子：
-::: demo
-
-```vue
-<template>
-  <p>{{ 1 + 2 }}</p>
-</template>
-```
-
-:::
-
-### v-bind
-
-简写`@`，

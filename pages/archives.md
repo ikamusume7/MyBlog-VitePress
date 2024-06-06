@@ -4,8 +4,8 @@ home: true
 ---
 
 <script setup>
-import { data as posts } from "../src/posts.data.ts";
-import { sortPostsByYear } from "../src/utils/postUtil.ts";
+import { data as posts } from "../src/posts.data";
+import { sortPostsByYear } from "../src/utils/postUtil";
 const dates = sortPostsByYear(posts);
 </script>
 

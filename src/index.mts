@@ -2,8 +2,9 @@ import type { Theme } from "vitepress";
 import DefaultTheme from "vitepress/theme";
 import Layout from "./views/Layout.vue";
 import "./styles/custom.css";
-import DemoPreview, { useComponents } from "@vitepress-code-preview/container";
-import "@vitepress-code-preview/container/dist/style.css";
+import { Sandbox } from "vitepress-plugin-sandpack";
+import "vitepress-plugin-sandpack/dist/style.css";
+import "vitepress-markdown-timeline/dist/theme/index.css";
 
 export default {
   extends: DefaultTheme,
@@ -13,6 +14,6 @@ export default {
     // app is the Vue 3 app instance from createApp()
     // router is VitePress' custom router (see `lib/app/router.js`)
     // siteData is a ref of current site-level metadata.
-    useComponents(app, DemoPreview);
+    app.component("Sandbox", Sandbox);
   },
 } satisfies Theme;
