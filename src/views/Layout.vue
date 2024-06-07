@@ -1,5 +1,4 @@
 <template>
-  <OverlayScrollbarsComponent defer>
   <div class="flex flex-col h-screen">
     <div class="background w-full h-full fixed top-0 left-0 -z-10" />
     <Header @change-theme="changeTheme" :isDark="isDark" />
@@ -65,7 +64,6 @@
     </main>
     <Footer />
   </div>
-  </OverlayScrollbarsComponent>
 </template>
 
 <script setup lang="ts">
