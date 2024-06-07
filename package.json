@@ -14,6 +14,8 @@
     "cross-spawn": "^7.0.3",
     "daisyui": "^4.11.1",
     "gray-matter": "^4.0.3",
+    "overlayscrollbars": "^2.8.3",
+    "overlayscrollbars-vue": "^0.5.9",
     "tailwindcss": "^3.4.3",
     "vitepress": "^1.2.3",
     "vitepress-markdown-timeline": "^1.2.1",

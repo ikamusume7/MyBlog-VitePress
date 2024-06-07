@@ -1,4 +1,5 @@
 <template>
+  <OverlayScrollbarsComponent defer>
   <div class="flex flex-col h-screen">
     <div class="background w-full h-full fixed top-0 left-0 -z-10" />
     <Header @change-theme="changeTheme" :isDark="isDark" />
@@ -26,7 +27,7 @@
           <div v-else-if="frontmatter.title === undefined">
             <Content />
           </div>
-          <div v-else class="card bg-base-100 shadow-md h-auto mb-2">
+          <div v-else class="card bg-base-100 shadow-xl h-auto mb-2">
             <article class="card-body vp-doc">
               <h1 class="text-3xl font-bold">{{ frontmatter.title }}</h1>
               <Content />
@@ -64,6 +65,7 @@
     </main>
     <Footer />
   </div>
+  </OverlayScrollbarsComponent>
 </template>
 
 <script setup lang="ts">
@@ -81,6 +83,7 @@ import {
   sortPostsByDate,
   sortPostsByTag,
 } from "../utils/postUtil";
+import { OverlayScrollbarsComponent } from "overlayscrollbars-vue";
 
 const { page, frontmatter, isDark, title } = useData();
 

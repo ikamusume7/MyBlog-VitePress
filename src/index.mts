@@ -5,6 +5,7 @@ import "./styles/custom.css";
 import { Sandbox } from "vitepress-plugin-sandpack";
 import "vitepress-plugin-sandpack/dist/style.css";
 import "vitepress-markdown-timeline/dist/theme/index.css";
+import "overlayscrollbars/overlayscrollbars.css";
 
 export default {
   extends: DefaultTheme,
